@@ -22,5 +22,9 @@
     </head>
     <body class="antialiased">
         Welcome to my Jesusshop
+        <br><div class="center">
+        <a href="/login">Login Here</a>
+        <a href="/register">Register</a>
+        </div>
     </body>
 </html>

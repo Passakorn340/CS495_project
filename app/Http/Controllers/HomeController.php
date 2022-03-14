@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
+
 class HomeController extends Controller
 {
     /**
@@ -23,6 +25,19 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        if(Auth::user()->email == "admin@gmail.com"){
+            return redirect('/admin');
+        }else{
+            return view('home');
+        }
+        
+    }
+
+    public function admin_check(){
+        if(Auth::user()->email != 'admin@gmail.com'){
+            return redirect('/home');
+        }else{
+            return view('admin');
+        }
     }
 }

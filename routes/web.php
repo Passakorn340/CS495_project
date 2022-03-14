@@ -19,4 +19,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/admin',  [App\Http\Controllers\HomeController::class, 'admin_check'])->name('admin');
+
+Route::get('/create', function(){
+    return view('createHome');
+});
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

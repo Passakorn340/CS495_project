@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Chiang Mai homestay</title>
+        <title>{{ config('app.name', 'Chiang Mai homestay') }}</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -17,15 +17,19 @@
         <style>
             body {
                 font-family: 'Nunito', sans-serif;
+                background-image: url('https://www.tripgether.com/wp-content/uploads/tripgetter/mae-klang002.jpg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: 100% 100%;
             }
         </style>
     </head>
     <body class="antialiased">
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <div id="app">
+        <nav class="navbar navbar-expand-md navbar-light bg-dark shadow-sm">
             <div class="container">
-                <a class="navbar-brand">
-                    Chiang Mai homestay
+                <a class="navbar-brand text-white" href="{{ url('/home') }}">
+                    {{ config('app.name', 'Chiang Mai homestay') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -43,13 +47,13 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link text-white" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -75,6 +79,11 @@
                 </div>
             </div>
         </nav>
+        <div class="container">
+            <div class="row p-5">
+                <div class="col"><p class="fs-1 fw-bold">รวมสถานที่ท่องเที่ยวโฮมสเตย์ในเชียงใหม่</p></div>
+            </div>
+        </div>
         </div>
     </body>
 </html>

@@ -28,7 +28,7 @@
                 <td>
                   <a
                     type="button"
-                    class="btn btn-primary"
+                    class="btn btn-warning"
                     data-bs-toggle="modal"
                     data-bs-target="#staticBackdrop"
                     @click="updateModal(home.id)"

@@ -28410,18 +28410,15 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-md-8" }, [
+      _c("div", { staticClass: "col-md-10" }, [
         _c(
           "div",
-          { staticClass: "row" },
+          { staticClass: "row gy-5" },
           _vm._l(_vm.homestay, function (info) {
             return _c("div", { key: info.id, staticClass: "col" }, [
               _c(
                 "div",
-                {
-                  staticClass: "card",
-                  staticStyle: { width: "18rem height: 200px" },
-                },
+                { staticClass: "card h-100", staticStyle: { width: "18rem" } },
                 [
                   _c("img", {
                     staticClass: "card-img-top",
@@ -28511,15 +28508,16 @@ var render = function () {
                           ]),
                           _vm._v(" "),
                           _c("div", { staticClass: "container my-4" }, [
-                            _c("h3", [_vm._v("ข้อมูล")]),
+                            _c("h3", [_vm._v("รายละเอียด")]),
                             _vm._v(" "),
                             _c("p", [_vm._v(_vm._s(_vm.description))]),
                           ]),
                           _vm._v(" "),
                           _c("div", { staticClass: "text-center" }, [
                             _c("h2", [
-                              _c("span", [_vm._v("ราคาเช่าต่อคืนอิอิ")]),
-                              _vm._v(" " + _vm._s(_vm.price)),
+                              _c("span", [_vm._v("ราคา : ")]),
+                              _vm._v(_vm._s(_vm.price)),
+                              _c("span", [_vm._v(" / คืน")]),
                             ]),
                           ]),
                           _vm._v(" "),
@@ -28604,7 +28602,7 @@ var render = function () {
                     _c(
                       "a",
                       {
-                        staticClass: "btn btn-primary",
+                        staticClass: "btn btn-warning",
                         attrs: {
                           type: "button",
                           "data-bs-toggle": "modal",

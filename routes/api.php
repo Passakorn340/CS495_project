@@ -26,8 +26,8 @@ Route::get('/product/search/{name}', [\App\Http\Controllers\ProductController::c
 //Protect
 Route::group(['middleware'=>['auth:sanctum']], function(){
     Route::post('/product/store', [\App\Http\Controllers\ProductController::class, 'store']);
-    Route::post('/product/update', [\App\Http\Controllers\ProductController::class, 'update']);
-    Route::delete('/product/{id}', [\App\Http\Controllers\ProductController::class, 'destroy']);
+    Route::post('/product/update/{id}', [\App\Http\Controllers\ProductController::class, 'update']);
+    Route::delete('/product/del/{id}', [\App\Http\Controllers\ProductController::class, 'destroy']);
     Route::post('/logout', [\App\Http\Controllers\AuthController::class, 'logout']);
 });
 
